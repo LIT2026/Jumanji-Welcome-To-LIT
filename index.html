@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>JUMANJI Number Match</title>
+<style>
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #0b3d2e;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+}
+.game {
+  background: rgba(0,0,0,0.7);
+  padding: 20px;
+  border-radius: 15px;
+  text-align: center;
+}
+h1 { color: #f2c94c; }
+.board {
+  display: grid;
+  grid-template-columns: repeat(4, 60px);
+  gap: 10px;
+  margin: 20px auto;
+}
+.card {
+  width: 60px;
+  height: 60px;
+  background: #065f46;
+  border-radius: 10px;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  font-size: 1.8rem;
+  cursor:pointer;
+  color: white;
+  user-select: none;
+}
+.letter {
+  position: fixed;
+  inset:0;
+  background: rgba(0,0,0,0.85);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+}
+.letter-box {
+  background:#f5e6c8;
+  color:#2b2b2b;
+  padding:25px;
+  border-radius:12px;
+  text-align:center;
+  font-family:"Georgia", serif;
+}
+button {
+  margin-top:15px;
+  padding:10px 20px;
+  border-radius:12px;
+  border:none;
+  background:#f2c94c;
+  font-weight:bold;
+  cursor:pointer;
+}
+</style>
+</head>
+<body>
+
+<div class="game">
+  <h1>JUMANJI Number Match</h1>
+  <p>Flip cards to find matching numbers!</p>
+  <div class="board" id="board"></div>
+  <button onclick="resetGame()">Restart</button>
+</div>
+
+<div class="letter" id="letter">
+  <div class="letter-box">
+    <h2>📜 JUMANJI</h2>
+    <p>
+      You have entered <b>Jumanji</b>…<br><br>
+      One of our friends is trapped inside the game.<br>
+      To save them, you must find the four other avatar characters.<br>
+      Only together can you save Jumanji.
+    </p>
+    <button onclick="showLookDown()">Continue</button>
+  </div>
+</div>
+
+<audio id="jungle" loop autoplay>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mpeg">
+</audio>
+
+<script>
+// Number Ma
